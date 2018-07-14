@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>头条文章分析</title>
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/index.css'%}" rel="stylesheet">
+    <link rel="shortcut icon " type="images/x-icon" href="{% static 'image/favicon.ico'%}">
+    <script src="{% static 'js/jquery.js' %}" ></script>
+    <script src="{% static 'js/index.js' %}" ></script>
+</head>
+<body>
+<div class="container" style="width: 50%;margin-top: 15%;">
+    <h1>新闻报道统计与分析结果</h1>
+    <div class="content">
+
+        <input class="row" name="articel_url" />
+        <button type="button" class="btn btn-success row">查询文章</button>
+        <div class="res row">
+            <h5>搜索结果:</h5>
+            <div class="check">还没有查询结果
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
