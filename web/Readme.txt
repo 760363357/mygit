@@ -1,4 +1,4 @@
-��Ҫģ�飺
+﻿需要模块：
 requests
 django
 sklearn
