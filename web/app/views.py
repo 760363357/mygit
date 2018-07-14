@@ -25,7 +25,8 @@ def check(request):
                 'origin': info.get_origin(),
                 'time': info.get_time(),
                 'keyword': info.get_keyword(),
-                'type': info.get_predict(),
+                'pre_type': info.get_predict(),
+                'real_type': info.get_type(),
                 'passages_count': info.get_passages_counts(),
                 'count': info.get_count(),
                 'code': 4

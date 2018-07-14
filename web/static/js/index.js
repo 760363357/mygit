@@ -42,10 +42,14 @@
                                else if(i == "time"){
                                    temp = "发布时间："
                                }
-                               else if(i == "type"){
-                                   temp = "文章类型："
+                               else if(i == "pre_type"){
+                                   temp = "预测文章类型："
                                }
-                               else{
+                               else if(i == "real_type"){
+                                   temp = "头条文章类型："
+
+                               }
+                               else {
                                    continue
                                }
                                str += "<p><span>" + temp + "</span><span>" + data[i] + "</span></p>";

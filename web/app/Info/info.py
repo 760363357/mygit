@@ -15,12 +15,13 @@ class Info(object):
     def __init__(self, url):
         self.url = url
         self.text = self._get_text(self.url)
-        print(self.text)
+
         self.title_compile = 'title>(.*?)</title>'
         self.origin_compile = "source: '(.*?)'"
         self.time_compile = "time: '(.*?)'"
         self.passages_counts_compile = '&lt;p&gt;'
         self.content_compile = '&lt;p&gt;(.*?)&lt'
+        self.classify_compile = "chineseTag: '(.*?)'"
         self.tid_thr = 0.2
         self.predict_dict = {
             '1': '汽车',
@@ -79,6 +80,9 @@ class Info(object):
         predict_num = predict([' '.join(jieba.cut(self._get_content_text()))])[0]
         return self.predict_dict[predict_num]
 
+    def get_type(self):
+        return re.findall(self.classify_compile, self.text)[0]
+
 
 if __name__ == '__main__':
     i = Info('https://www.toutiao.com/a6547465138344034823/')
@@ -87,3 +91,4 @@ if __name__ == '__main__':
     # print(i.get_origin())
     # print(i.get_keyword())
     # print(i.get_predict())
+    print(i.get_type())
